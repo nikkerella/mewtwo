@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package stock;
+
+option go_package = "/proto/stock;stock";
+
+service StockService {
+    rpc CheckStock(CheckStockRequest) returns (CheckStockResponse);
+    rpc DeductStock(DeductStockRequest) returns (DeductStockResponse);
+}
+
+message CheckStockRequest {
+    string product_id = 1;
+}
+
+message CheckStockResponse {
+    bool available = 1;
+    int32 current_stock = 2;
+}
+
+message DeductStockRequest {
+    string product_id = 1;
+}
+
+message DeductStockResponse {
+    bool success = 1;
+    int32 updated_stock = 2;
+}
