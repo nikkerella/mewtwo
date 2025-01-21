@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package pkm;
+
+option go_package = "/protobuf;pkm";
+
+// The query service definition
+service QueryService {
+    rpc Query (QueryReq) returns (QueryResp);
+}
+
+// The query request message
+message QueryReq {
+    int32 id = 1;
+}
+
+// The query response message
+message QueryResp {
+    string name = 1;
+}
