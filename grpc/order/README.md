@@ -10,8 +10,8 @@ Components:
 Flow:
 1. Client sends an order request to the OrderService.
 2. OrderService communicates with the StockService to check if enough stock is available.
-- If the stock is insufficient, the order is canceled.
-- If enough stock is available, OrderService updates the stock by sending a request to StockService to reduce the stock by 1.
+  - If the stock is insufficient, the order is canceled.
+  - If enough stock is available, OrderService updates the stock by sending a request to StockService to reduce the stock by 1.
 3. OrderService then returns the order status to the client along with the updated stock level.
 
 ``` sh
