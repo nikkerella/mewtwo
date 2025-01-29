@@ -11,7 +11,7 @@ func (*noCopy) Lock()   {}
 func (*noCopy) Unlock() {}
 
 type Counter struct {
-	noCopy noCopy // 標記結構體不可複製
+	noCopy noCopy
 	mu     sync.Mutex
 	count  int
 }
@@ -29,15 +29,15 @@ func (c *Counter) Get() int {
 }
 
 func main() {
-	honmono := Counter{}
+	original := Counter{}
 
-	// This creates a nisemono of the counter
-	nisemono := honmono
+	// This creates a copy of the counter
+	copy := original
 
 	// Using the copy to increment
-	nisemono.Increment()
+	copy.Increment()
 
 	// Original counter's value remains unchanged
-	fmt.Println("Original value:", honmono.Get()) // Output: 0
-	fmt.Println("Copy value:", nisemono.Get())    // Output: 1
+	fmt.Println("Original value:", original.Get()) // Output: 0
+	fmt.Println("Copy value:", copy.Get())         // Output: 1
 }

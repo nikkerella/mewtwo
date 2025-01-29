@@ -24,7 +24,7 @@ func (c *Cache) regenerateCache() string {
 	// Simulate long cache regeneration
 	time.Sleep(3 * time.Second)
 
-	c.data = "데이터"
+	c.data = "DATA"
 	c.expired = false
 
 	fmt.Println("Regenerated cache!")
@@ -82,7 +82,7 @@ func (c *Cache) singleflight(userID int, wg *sync.WaitGroup) {
 
 func main() {
 	cache := &Cache{
-		data:    "データ",
+		data:    "",
 		expired: true,
 	}
 
