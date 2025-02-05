@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">fcm</string>
+    <string name="msg_token_fmt">msg_token_fmt</string>
+</resources>

@@ -1,3 +1,3 @@
-# Mewtwo-Go
+# Mewtwo
 
-Demos of Go.
+Demo, demo and demos.
