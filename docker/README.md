@@ -18,7 +18,7 @@ docker-compose up -d
 
 ### Share the Container
 
-1. Share the docker image via Docker Hub
+1. Share the docker image via Docker Hub.
 2. Share the Image as a .tar file.
 3. Share **docker-compose.yml** file.
 
