@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-gin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-gin
+  template:
+    metadata:
+      labels:
+        app: hello-gin
+    spec:
+      containers:
+      - name: hello-gin
+        image: your-dockerhub-username/hello-gin:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          value: "postgres"
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: "postgres"
+        - name: DB_PASSWORD
+          value: "secret"
+        - name: DB_NAME
+          value: "mydatabase"
